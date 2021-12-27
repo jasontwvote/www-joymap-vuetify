@@ -1,5 +1,11 @@
 <template>
-  <v-carousel v-model="model" cycle interval="5000" hide-delimiter-background height="35vh">
+  <v-carousel
+    v-model="model"
+    cycle
+    interval="5000"
+    hide-delimiter-background
+    height="35vh"
+  >
     <v-carousel-item v-for="(url, i) in images" :src="url" :key="i">
     </v-carousel-item>
   </v-carousel>
@@ -7,18 +13,14 @@
 <script>
 export default {
   name: "IndexCarousel",
-  props: [],
+  props: ["carousel"],
   components: {},
   data() {
     return {
       model: 0,
-      carousel: [],
     };
   },
-  async mounted() {
-    let { carousel } = await this.$api.carousel.getCarousel();
-    this.carousel = carousel;
-  },
+  mounted() {},
   beforeDestroy() {},
   computed: {
     images() {

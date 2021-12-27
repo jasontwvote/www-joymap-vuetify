@@ -1,25 +1,58 @@
 <template>
-  <v-row>
-    <v-col class="px-0">
-      <IndexCarousel />
-    </v-col>
-  </v-row>
+  <v-container>
+    <v-row>
+      <v-col class="px-0">
+        <v-skeleton-loader
+          v-if="$store.state.loading.indexCarousel"
+          class="mx-auto"
+          type="image"
+          :loading="true"
+        ></v-skeleton-loader>
+        <IndexCarousel v-else :carousel="carousel" />
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
+        <IndexFilter />
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 
 <script>
 import IndexCarousel from "../components/pages/index/IndexCarousel.vue";
+import IndexFilter from "../components/pages/index/IndexFilter.vue";
 
 export default {
+  async asyncData({ app, store }) {
+    let { carousel } = await app.api.carousel.getCarousel();
+
+    return {
+      carousel,
+    };
+  },
   name: "IndexPage",
   props: [],
   components: {
     IndexCarousel,
+    IndexFilter,
   },
   data() {
     return {};
   },
-  mounted() {},
+  created() {
+    this.$store.commit("loading/toggle", {
+      key: "indexCarousel",
+      loading: true,
+    });
+  },
+  mounted() {
+    this.$store.commit("loading/toggle", {
+      key: "indexCarousel",
+      loading: false,
+    });
+  },
   beforeDestroy() {},
   computed: {},
   methods: {},
