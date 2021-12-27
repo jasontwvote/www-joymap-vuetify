@@ -11,7 +11,8 @@
         <IndexCarousel v-else :carousel="carousel" />
       </v-col>
     </v-row>
-    <v-row>
+
+    <v-row class="filter-row">
       <v-col>
         <IndexFilter />
       </v-col>

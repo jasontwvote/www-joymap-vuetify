@@ -28,3 +28,7 @@ export default {
   methods: {},
 };
 </script>
+
+<style>
+@import "@/assets/mystyle.css";
+</style>

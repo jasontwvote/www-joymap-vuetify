@@ -1,0 +1,22 @@
+.filter-row {
+  flex: none;
+  overflow-x: scroll;
+}
+
+.filter-row::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-row .index-filter {
+  width: 600px;
+}
+.filter-row .index-filter > button{
+    margin-left:8px
+  }
+
+.v-btn:not(.v-btn--round).v-size--default {
+  padding: 0 5px;
+}
+.v-btn:not(.v-btn--round).v-size--small{
+  padding: 0 5px;
+}
