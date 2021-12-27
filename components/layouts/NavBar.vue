@@ -1,6 +1,9 @@
 <template>
-  <v-app-bar app fixed color="white" elevation="0">
-    <v-container class="d-flex justify-space-between w-full align-center px-md-10" fluid>
+  <v-app-bar app fixed color="white" elevation="0" class="topbar">
+    <v-container
+      class="d-flex justify-space-between w-full align-center px-md-10"
+      fluid
+    >
       <div class="d-flex">
         <v-app-bar-nav-icon
           v-if="$vuetify.breakpoint.mobile"
@@ -31,10 +34,10 @@
           v-if="$vuetify.breakpoint.mobile"
           class="px-0 justify-end"
         >
-          <i class="fas fa-search primary--text"></i>
+          <v-icon color="primary"> fas fa-search </v-icon>
         </v-btn>
         <v-btn elevation="0" color="white" depressed v-else>
-          <i class="fas fa-search primary--text"></i>
+          <v-icon color="primary"> fas fa-search </v-icon>
           <span class="primary--text ml-1"> 搜尋</span>
         </v-btn>
 
@@ -72,4 +75,8 @@ export default {
 };
 </script>
 <style>
+.topbar .v-toolbar__content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
 </style>
