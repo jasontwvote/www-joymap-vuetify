@@ -121,7 +121,7 @@ export default {
       }
     },
     breakpoint: {
-      mobileBreakpoint: 'sm' // 这个值等于960
+      mobileBreakpoint: 'xs' 
     },
     icons: {
       iconfont: 'fa',
