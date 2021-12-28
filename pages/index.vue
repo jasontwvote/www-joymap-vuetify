@@ -18,7 +18,7 @@
       </v-col>
     </v-row>
 
-      <IndexCard />
+      <IndexCardTable />
   </v-container>
 </template>
 
@@ -26,7 +26,7 @@
 <script>
 import IndexCarousel from "../components/pages/index/IndexCarousel.vue";
 import IndexFilter from "../components/pages/index/IndexFilter.vue";
-import IndexCard from "../components/pages/index/IndexCard.vue";
+import IndexCardTable from "../components/pages/index/IndexCardTable.vue";
 
 export default {
   async asyncData({ app, store }) {
@@ -41,7 +41,7 @@ export default {
   components: {
     IndexCarousel,
     IndexFilter,
-    IndexCard,
+    IndexCardTable,
   },
   data() {
     return {};

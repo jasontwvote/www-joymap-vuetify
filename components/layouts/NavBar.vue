@@ -8,6 +8,7 @@
         <v-app-bar-nav-icon
           v-if="$vuetify.breakpoint.mobile"
           @click="toggleSidebar"
+          color="primary"
         ></v-app-bar-nav-icon>
 
         <v-img
