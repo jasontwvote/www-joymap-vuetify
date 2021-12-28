@@ -17,8 +17,12 @@
         <IndexFilter />
       </v-col>
     </v-row>
-
-      <IndexCardTable />
+    <IndexCardTable />
+    <v-row>
+      <v-col v-intersect="infiniteScrolling" v-if="this.$store.getters['indexCard/hasNextPage']">
+        <v-progress-circular indeterminate color="primary" class="bottom" />
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
@@ -60,7 +64,13 @@ export default {
   },
   beforeDestroy() {},
   computed: {},
-  methods: {},
+  methods: {
+    async infiniteScrolling() {
+      if(this.$store.getters['indexCard/hasNextPage']){
+        await this.$store.dispatch('indexCard/fetchData')
+      }
+    },
+  },
   watch: {},
 };
 </script>

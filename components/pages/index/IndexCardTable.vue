@@ -4,11 +4,11 @@
       md="4"
       sm="6"
       cols="12"
-      v-for="(store, key) in stores"
+      v-for="(store, key) in $store.state.indexCard.stores"
       :key="key"
       class="mt-2"
     >
-      <v-card class="mx-auto" max-width="400" elevation="0">
+      <v-card class="mx-auto" max-width="400" elevation="0" hover>
         <v-img class="white--text align-end" height="200px" :src="store.banner">
         </v-img>
         <v-card-title class="pb-0">
@@ -63,6 +63,7 @@
           </div>
         </v-card-text>
       </v-card>
+
     </v-col>
   </v-row>
 </template>
@@ -78,12 +79,12 @@ export default {
     };
   },
   async mounted() {
-    let { data, pagination } = await this.$api.map.search(1, {
-      limit: 10,
-    });
+    // let { data, pagination } = await this.$api.map.search(1, {
+    //   limit: 10,
+    // });
 
-    this.stores = data;
-    this.pagination = pagination;
+    // this.stores = data;
+    // this.pagination = pagination;
   },
   beforeDestroy() {},
   computed: {},
@@ -102,6 +103,7 @@ export default {
 
       return "grey--text";
     },
+
   },
   watch: {},
 };
