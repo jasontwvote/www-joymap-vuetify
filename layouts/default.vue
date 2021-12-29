@@ -23,7 +23,9 @@ export default {
   data() {
     return {};
   },
-  mounted() {},
+  mounted() {
+    this.$store.dispatch('params/fetchData');
+  },
   beforeDestroy() {},
   methods: {},
 };

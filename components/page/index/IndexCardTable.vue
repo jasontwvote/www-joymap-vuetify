@@ -63,7 +63,6 @@
           </div>
         </v-card-text>
       </v-card>
-
     </v-col>
   </v-row>
 </template>
@@ -78,14 +77,7 @@ export default {
       pagination: {},
     };
   },
-  async mounted() {
-    // let { data, pagination } = await this.$api.map.search(1, {
-    //   limit: 10,
-    // });
-
-    // this.stores = data;
-    // this.pagination = pagination;
-  },
+  async mounted() {},
   beforeDestroy() {},
   computed: {},
   methods: {
@@ -103,7 +95,6 @@ export default {
 
       return "grey--text";
     },
-
   },
   watch: {},
 };

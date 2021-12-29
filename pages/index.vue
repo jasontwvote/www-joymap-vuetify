@@ -28,9 +28,9 @@
 
 
 <script>
-import IndexCarousel from "../components/pages/index/IndexCarousel.vue";
-import IndexFilter from "../components/pages/index/IndexFilter.vue";
-import IndexCardTable from "../components/pages/index/IndexCardTable.vue";
+import IndexCarousel from "../components/page/index/IndexCarousel.vue";
+import IndexFilter from "../components/page/index/IndexFilter.vue";
+import IndexCardTable from "../components/page/index/IndexCardTable.vue";
 
 export default {
   async asyncData({ app, store }) {

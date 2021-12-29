@@ -11,13 +11,15 @@
           color="primary"
         ></v-app-bar-nav-icon>
 
-        <v-img
-          lazy-src="/imgs/logo.jpg"
-          max-height="64"
-          max-width="200"
-          src="/imgs/logo.jpg"
-          contain
-        ></v-img>
+        <a href="/">
+          <v-img
+            lazy-src="/imgs/logo.jpg"
+            max-height="64"
+            max-width="200"
+            src="/imgs/logo.jpg"
+            contain
+          ></v-img>
+        </a>
       </div>
 
       <div v-if="!$vuetify.breakpoint.mobile">
@@ -77,7 +79,7 @@ export default {
 </script>
 <style>
 .topbar .v-toolbar__content {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 </style>
